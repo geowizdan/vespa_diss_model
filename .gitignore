@@ -1,0 +1,23 @@
+# RStudio and IDE files
+.Rproj.user/
+.Rhistory
+.RData
+*.Rproj
+
+# VS Code settings
+.vscode/
+
+# Large or raw data
+/data/raw/
+/models/
+/results/final_outputs/
+
+# Temporary system files
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Cache and logs
+*.log
+*.aux
