@@ -7,7 +7,7 @@
 .vscode/
 
 # Large or raw data
-/data/raw/
+/data/
 /models/
 /results/final_outputs/
 
