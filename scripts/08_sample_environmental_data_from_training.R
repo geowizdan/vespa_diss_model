@@ -39,18 +39,9 @@ training_vect <- vect(training_countries_mainland)
 bioclim_masked <- crop(bioclim_stack, training_vect)
 bioclim_masked <- mask(bioclim_masked, training_vect)
 
-# Step 7 Sample points from the cropped raster
-
-sample_points <- spatSample(
+writeRaster(
   bioclim_masked,
-  size = 10000,
-  method = "random",
-  na.rm = TRUE,
-  as.df = TRUE
+  filename = "data/environmental/cleaned/bioclim_masked_western_europe.tif",
+  filetype = "GTiff",
+  overwrite = TRUE
 )
-
-# Step 8: Quick check
-print(head(sample_points))
-
-# Step 9: Save the sampled points to a CSV file
-write.csv(sample_points, "data/derived/climate_sample_western_europe.csv", row.names = FALSE)
