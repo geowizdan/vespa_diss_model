@@ -35,6 +35,8 @@ training_countries_mainland <- st_intersection(training_countries, bbox_europe)
 
 training_vect <- vect(training_countries_mainland)
 
+saveRDS(training_vect, "data/environmental/training_vect_western_europe.rds")
+
 # Step 6: Crop the raster stack to the training countries
 bioclim_masked <- crop(bioclim_stack, training_vect)
 bioclim_masked <- mask(bioclim_masked, training_vect)
